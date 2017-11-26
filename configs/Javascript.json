@@ -26,9 +26,6 @@
         "es6", "es6/src", "es6/src/model", "es6/src/api", "es6/docs", "es6/test", "es6/test/api", "es6/test/model" 
     ],
     "transformations": [
-        { "input": "es6/api.mustache", "output": "es6/src/api/Default.mjs" },
-        { "input": "es6/api_doc.mustache", "output": "es6/docs/Default.md" },
-        { "input": "es6/api_test.mustache", "output": "es6/test/api/Default.mjs" },
         { "input": "es6/ApiClient.mustache", "output": "es6/src/ApiClient.mjs" },
         { "input": "es6/enumClass.mustache", "output": "es6/src/enumClass.mjs" },
         { "input": "es6/git_push.sh.mustache", "output": "es6/git_push.sh" },
@@ -39,9 +36,6 @@
         { "input": "es6/mocha.opts", "output": "es6/mocha.opts" },
         { "input": "es6/mocha.opts", "output": "es6/test/mocha.opts" },
         { "input": "es6/travis.yml", "output": "es6/.travis.yml" },
-        { "input": "api.mustache", "output": "src/api/Default.js" },
-        { "input": "api_doc.mustache", "output": "docs/Default.md" },
-        { "input": "api_test.mustache", "output": "test/api/Default.js" },
         { "input": "ApiClient.mustache", "output": "src/ApiClient.js" },
         { "input": "enumClass.mustache", "output": "src/enumClass.TODO" },
         { "input": "git_push.sh.mustache", "output": "git_push.sh" },
@@ -52,6 +46,14 @@
         { "input": "mocha.opts", "output": "mocha.opts" },
         { "input": "mocha.opts", "output": "test/mocha.opts" },
         { "input": "travis.yml", "output": ".travis.yml" }
+    ],
+    "perApi": [
+        { "input": "es6/api.mustache", "output": "es6/src/api/{{name}}.mjs" },
+        { "input": "es6/api_doc.mustache", "output": "es6/docs/{{name}}.md" },
+        { "input": "es6/api_test.mustache", "output": "es6/test/api/{{name}}.mjs" },
+        { "input": "api.mustache", "output": "src/api/{{name}}.js" },
+        { "input": "api_doc.mustache", "output": "docs/{{name}}.md" },
+        { "input": "api_test.mustache", "output": "test/api/{{name}}.js" }
     ],
     "perModel": [
         { "input": "model.mustache", "output": "src/model/{{#models}}{{#model}}{{name}}{{/model}}{{/models}}.js" },
